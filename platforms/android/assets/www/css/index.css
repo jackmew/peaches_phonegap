@@ -1,0 +1,199 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+/*********************************** Jack setting ******************************************/
+
+html{
+    font-size: 100%; /* WinIE text resize correction */
+
+} 
+
+body{
+    font-size: 1em;
+    font-family: georgia, serif;
+    text-align: center;
+    color: #444;
+    padding: 0;
+    margin: 0;  
+}
+/*消除掉 背後漸層 會把字變得模糊*/
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper ,.ui-btn{
+  text-shadow:none !important;
+}
+
+/*設定content背景顏色*/
+.ui-page {
+
+background: #feccb1!important; /* Old browsers */
+background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%)!important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feccb1), color-stop(50%,#f17432), color-stop(51%,#ea5507), color-stop(100%,#fb955e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%)!important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%)!important;  /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%)!important;  /* IE10+ */
+background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%)!important;  /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 )!important;  /* IE6-9 */
+
+
+
+}
+table {
+    width:100%!important;
+}
+
+.ui-mobile [data-role="header"] ,.ui-mobile [data-role="footer"]{
+background: #b7deed!important; /* Old browsers */
+background: -moz-linear-gradient(top,  #b7deed 0%, #71ceef 50%, #21b4e2 51%, #b7deed 100%)!important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7deed), color-stop(50%,#71ceef), color-stop(51%,#21b4e2), color-stop(100%,#b7deed))!important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #b7deed 0%,#71ceef 50%,#21b4e2 51%,#b7deed 100%)!important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #b7deed 0%,#71ceef 50%,#21b4e2 51%,#b7deed 100%)!important; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #b7deed 0%,#71ceef 50%,#21b4e2 51%,#b7deed 100%)!important; /* IE10+ */
+background: linear-gradient(to bottom,  #b7deed 0%,#71ceef 50%,#21b4e2 51%,#b7deed 100%)!important; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed',GradientType=0 )!important; /* IE6-9 */
+
+}
+/*按鈕設定*/
+.ui-btn {
+/*按鈕顏色*/
+background: orange!important; /* Old browsers */
+/*按鈕邊線顏色*/
+border-color: pink !important;
+/*按鈕陰影*/
+box-shadow:2px 2px 1px rgba(20%,20%,40%,0.5) !important;
+}
+.ui-btn:hover{
+    background: lightblue!important; /* Old browsers */
+}
+/*按鈕按下時 框框的顏色*/
+.ui-btn-active 
+{ 
+    /*
+    background-color: rgb(150,225,250) !important; 
+    box-shadow: 0 0 10px #6195D8;
+    */
+}
+
+/********************************* 開口部結構表 open ************************************/
+#combustible_table  td:first-child ,#metal_table td:first-child,#wood_table td:first-child{
+    width:30%;
+}
+/********************************** 火災模擬案例 simulate *******************************/
+div[name="fire_simulate_flatPic"] img ,div[name="fire_simulate_flatPic"] iframe{
+    width:100%;
+    height:50%;
+}
+/********************************** 貨櫃屋火場案例 container ******************************/
+div[name="fire_container_flatPic"] img ,div[name="fire_container_flatPic"] iframe{
+    width:100%;
+    height:50%;
+}
+/***********************************  地址 address **************************************/
+#map {
+    width:100%;
+    /*不知道為啥會突然不能用% 顯示的map不佔空間? 會被擠掉 看不到*/
+    height:300px;
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
